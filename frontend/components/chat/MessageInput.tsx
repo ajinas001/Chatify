@@ -24,10 +24,11 @@ const MessageInput: React.FC<MessageInputProps> = ({ newMessage, setNewMessage, 
                 className="rounded-full object-cover"
                 // Fallback with initials, styled like the screenshot
                 onError={(e) => {
-                    e.currentTarget.style.display = 'none'; // Hide broken image
-                    const fallback = e.currentTarget.nextElementSibling;
+                    (e.currentTarget as HTMLElement).style.display = 'none'; // Hide broken image
+                    const fallback = e.currentTarget.nextElementSibling as HTMLElement | null;
                     if (fallback) fallback.style.display = 'flex';
                 }}
+
             />
             <div className="hidden items-center justify-center h-10 w-10 rounded-full bg-gray-700 text-white font-bold flex-shrink-0">
                 {currentUser.name.charAt(0).toUpperCase()}
@@ -45,7 +46,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ newMessage, setNewMessage, 
             {/* Action Buttons */}
             <button type="button" className="p-1 md:p-2 text-gray-500 hover:text-gray-700"><PaperClipIcon className="h-4 w-4 md:h-6 md:w-6" /></button>
             <button type="button" className="p-1 md:p-2 text-gray-500 hover:text-gray-700"><CameraIcon className="h-4 w-4 md:h-6 md:w-6" /></button>
-            
+
             {/* Send / Mic Button */}
             {newMessage.trim() ? (
                 <button type="submit" className="p-1 md:p-2 text-blue-500 hover:text-blue-700">

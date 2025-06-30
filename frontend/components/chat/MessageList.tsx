@@ -5,7 +5,7 @@ import { Message } from '../../app/types/index';
 
 interface MessageListProps {
     messages: Message[];
-    messagesEndRef: React.RefObject<HTMLDivElement>;
+    messagesEndRef: React.RefObject<HTMLDivElement | null>; 
 }
 
 const MessageList: React.FC<MessageListProps> = ({ messages, messagesEndRef }) => {

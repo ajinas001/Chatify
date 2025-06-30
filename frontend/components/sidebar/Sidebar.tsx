@@ -110,10 +110,11 @@ const Sidebar: React.FC<SidebarProps> = ({ currentUser, contacts, selectedContac
                         {searchTerm ? (
                             <>
                                 <h3 className="text-gray-800 font-semibold text-base mb-2">
-                                    No results for "{searchTerm}"
+                                   No results for &quot;{searchTerm}&quot;
+
                                 </h3>
                                 <p className="text-gray-500 text-sm mb-6 max-w-48 leading-relaxed">
-                                    We couldn't find any conversations matching your search. Try different keywords or check the spelling.
+                                    We couldn&apos;t find any conversations matching your search. Try different keywords or check the spelling.
                                 </p>
                                 <button 
                                     onClick={() => setSearchTerm('')}
